@@ -1,0 +1,65 @@
+{% extends 'navbase.html' %}
+{% block title %}Suggestion{% endblock %}
+{% block body %}
+
+    <div class="container-fluid pt-lg-5 centered" style="margin-top: 169px; color:white!important;">
+        <div class="row">
+            <div class="col-sm-12 centered" style="text-align:center">
+                <h1 class="text-style-white">Suggest a new Historic Personality</h1>
+            </div>
+        </div>
+        <div class="row">
+            {% if is_error %}
+                <div class="col-md-12 alert alert-danger" role="alert">{{ error_message }}</div>
+            {% endif %}
+            {% if is_success %}
+                <div class="col-md-12 alert alert-success" role="alert">{{ success_message}}</div>
+            {% endif %}
+            <div class="col-md-4 offset-md-4" >
+                <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <label for="id_name">Name</label>
+                            <input id="id_name" maxlength="30" name="name" type="text" placeholder="Julius Caesar"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                             <label for="id_role">Role</label>
+                            <input id="id_role" maxlength="30" name="role" type="text" placeholder="General"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                             <label for="id_birth_year">Birth Year</label>
+                            <input id="id_birth_year" maxlength="30" name="birth_year" type="text" placeholder="100 BC"
+                                   class="form-control"/>
+
+                        </div>
+                    </div>
+                   <div class="form-group">
+                        <div class="col-sm-12">
+                             <label for="id_expiration_year">Year of Death</label>
+                            <input id="id_expiration_year" maxlength="30" name="expiration_year" type="text" placeholder="44 BC"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group col-centered ">
+                        <div class="col-sm-8 offset-sm-2 input-group">
+                            <input id="id_file" type="file" class="custom-file-input" name="image" />
+                            <label class="custom-file-label" for="id_file">Choose an Image</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-10 offset-sm-1">
+                            <button type="submit" class="btn btn-success btn-block" style="background-color:black; border-color: black">Suggest</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
