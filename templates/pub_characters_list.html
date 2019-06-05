@@ -1,0 +1,25 @@
+{% extends 'navbase.html' %}
+{% block title %}Pub{% endblock %}
+{% block body %}
+
+    <div class="container-fluid py-lg-2 h-100">
+        <div class="row">
+            <h5 class="jumbotron col-md-12" style="background-color:#19181A!important;opacity:0.7;">
+                <ul class="list-inline text-center font-weight-bold"><h5 style="color: white;">
+                    {% for character in characters %}
+                        <li class="list-inline-item pt-3">
+                            <img src="{{ character.image.file.url }}" class="img-thumbnail rounded" width="100px"
+                                 alt="Responsive image" style="padding: 0px;">
+                            <br>
+                            <h3 class="mb-0 font-weight:bold"><a
+                                    href="/pub/characters/{{ character.id }}" style="color: white">{{ character.name }}</a></h3>
+                            <br>
+                            <h5 style="color: white!important; margin-top: -28px;">{{ character.role }}</h5>
+                        </li>
+                    {% endfor %}
+                </ul></h5>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

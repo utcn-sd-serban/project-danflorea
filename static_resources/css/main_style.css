@@ -1,0 +1,18 @@
+body {
+    background: #212133;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.text-style-white{
+    color: white!important;
+}
+
+.navbar{
+    background-color: #1b1d23;
+}
